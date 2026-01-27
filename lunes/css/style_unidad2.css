@@ -83,3 +83,13 @@ h1 {
         height: 100px;
     }
 }
+
+.container2 {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    div {
+        background-color: red;
+    }
+}
