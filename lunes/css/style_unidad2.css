@@ -1,0 +1,85 @@
+/*
+
+Universal
+* {
+    color: purple;
+    font-size: 15px;
+}
+    */
+
+p {
+    color: red;
+}
+
+li {
+    font-size: 20px;
+
+}
+
+.grupo1 {
+    color: green;
+}
+
+.grupo2 {
+    color: blue;
+}
+
+#subtitulo {
+    color: orange;
+}
+
+#nombre {
+    border-color: orange;
+}
+
+#clave {
+    border-color: green;
+}
+
+input[type="password"] {
+    background-color: aqua;
+}
+
+[class*="g"] {
+    font-size: 30px
+}
+
+.primero p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.segundo>p {
+    color: fuchsia;
+    font-size: 40px;
+}
+
+.tercero h2+p {
+    color: blue !important;
+    font-size: 15px;
+}
+
+.primero h2~p {
+    color: yellow;
+    font-size: 15px;
+}
+
+h1 {
+    border: 1px solid green;
+    padding-left: 20px;
+    margin: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+
+    div {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+    }
+}

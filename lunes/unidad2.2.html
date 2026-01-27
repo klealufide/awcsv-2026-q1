@@ -4,17 +4,74 @@
 <head>
     <title>Unidad 2.2</title>
     <link rel="stylesheet" href="./css/style_unidad2.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <h1>Unidad 2.2</h1>
-    <p>Esta semana incursionamos al mundo del css</p>
 
-    <form>
-        <label>Ejemplo de Input</label>
-        <input type="text">
-        <button type="button">Enviar</button>
-    </form>
+    <header>
+
+    </header>
+    <main>
+        <h1>Unidad 2.2</h1>
+        <h2>Subtitulo</h2>
+        <h3 class="grupo1">Subtitulo</h3>
+        <h4>Subtitulo</h4>
+        <h5>Subtitulo</h5>
+        <h6 id="subtitulo">Subtitulo</h6>
+        <p>Parrafo <br> <br><br>Parrafo</p>
+        <p class="grupo2">Parrafo</p>
+        <p class="grupo1">Parrafo</p>
+
+        <form action="?" method="post"><!--Get es por la URL y POst no se ve-->
+            <input id="nombre" type="text" name="nombre" placeholder="Nombre">
+            <input id="clave" type="password" name="clave" placeholder="Clave">
+            <label>Color favorito</label>
+            <select>
+                <option>Rojo</option>
+                <option>Amarillo</option>
+                <option>Verde</option>
+            </select>
+            <input type="button" value="Enviar">
+        </form>
+        <table class="grupo2">
+            <tr>
+                <th>Alumnos</th>
+                <th>Notas</th>
+            </tr>
+            <tr>
+                <td>Karol</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <div class="container">
+            <div>Alumnos</div>
+            <div>Notas</div>
+            <div>Karol</div>
+            <div>70</div>
+        </div>
+        <div class="primero">
+            <h2>Hermano de parrafos 1</h2>
+            <p>Esto es un parrafo 1</p>
+            <p>Esto es un parrafo 1</p>
+            <div class="segundo">
+                <p> Parrafo 2 hijo del segundo div</p>
+                <p> Parrafo 2 hijo del segundo div</p>
+                <div class="tercero">
+                    <h2>Hermano de parrafos 3</h2>
+                    <p> Parrafo 3 hijo del tercer div</p>
+                    <p> Parrafo 3 hijo del tercer div</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+
 
 </body>
 
