@@ -1,0 +1,29 @@
+.navbar .container-fluid {
+    background-color: #ffc107 !important;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.carousel-item {
+
+    width: 50% !important;
+}
+
+.text-personalizado {
+
+    color: turquoise !important;
+
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: turquoise !important;
+}
+
+[class*="container"] {
+    background-color: purple;
+}
+
+[class*="col"] {
+    background-color: orange;
+    border: 1px solid black;
+}
