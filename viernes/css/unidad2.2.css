@@ -1,0 +1,85 @@
+/*
+
+* { // modificar todos los elementos de la pagina
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+*/
+
+button {
+    background-color: yellow;
+}
+
+.grupo1 {
+    color: green;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#usuario {
+    border-color: orange;
+}
+
+#clave {
+    border-color: yellowgreen;
+}
+
+
+h2 {
+    color: orange;
+}
+
+#subtitulo {
+    color: purple;
+}
+
+input[placeholder]{
+    background-color: red;
+}
+
+input[type="submit"]{
+    background-color: rgb(55, 21, 148);
+}
+
+[class*="grup"] {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nivel1 p {
+    color: purple;
+}
+
+.nivel2 > p {
+    color: brown;
+}
+
+.nivel1 h1+p {
+    color: green;
+}
+
+.nivel3 h1~p {
+    font-size: 20px;
+    color: aqua;
+}
+
+h1 {
+    border: 1px solid black;
+}
+
+.container {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-grid {
+    margin-top: 30px;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.items {
+    background-color: orange;
+    height: 50px;
+    height: 50px;
+    border: 1px solid black;
+}

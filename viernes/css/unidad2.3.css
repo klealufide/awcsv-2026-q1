@@ -1,0 +1,28 @@
+.menu {
+    background-color: turquoise;
+    font-size: 30px;
+    color: black;
+}
+
+.btn-personalizado {
+    background-color: turquoise;
+}
+
+.contenedor {
+    margin: 20px;
+}
+
+.formulario input[type] {
+    border-color: blueviolet;
+}
+
+#contenedor{
+    background-color: purple;
+    border: 3px solid black;
+}
+
+
+[class*="col"] {
+    background-color: orange;
+    border: 3px solid black;
+}
