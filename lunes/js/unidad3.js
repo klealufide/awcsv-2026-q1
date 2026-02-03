@@ -59,7 +59,7 @@ if (hora < 12) {
     saludo = "Buenos tardes noches";
 }
 
-console.log(saludo);    
+console.log(saludo);
 
 //mas simple
 // mas corta
@@ -68,3 +68,45 @@ console.log(saludo);
 //hora = 15;
 let saludo2 = (hora < 12) ? "Buenos dias" : "Buenos tardes noches";
 console.log(saludo2);
+
+let color = "morado";
+
+switch (color) {
+    case 'verde':
+        console.log("Siga!")
+        break;
+    case 'amarillo':
+        console.log("precaucion!")
+        break;
+    case 'rojo':
+        console.log("Detengase!")
+        break;
+    default:
+        console.log("El color no esta disponible");
+        break;
+}
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+let frutas = ["manzana", "pera", "melon"];
+
+
+for(let posicion in frutas){
+    console.log(frutas[posicion]);
+}
+
+console.log(frutas[2]);
+
+// do.. while ? primero hago y luego cuestiono
+let numero = 20;
+do {
+    numero++;
+    console.log("DOWHILE",numero);
+}while(numero < 30);
+
+while(numero < 40){
+     numero++;
+    console.log("wHILE",numero);   
+}
