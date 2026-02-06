@@ -95,3 +95,16 @@ for (let i = -1; i >= -10; i--) {
 for (let i = listaFrutas.length - 1; i >= 0; i--) {
     console.log(listaFrutas[i]);
 }
+
+let numero = 50;
+
+
+do {
+    numero++;
+    console.log("DOWHILE", numero);
+} while (numero < 50);
+
+while (numero < 55) {
+    numero++;
+    console.log("WHILE", numero);
+}
