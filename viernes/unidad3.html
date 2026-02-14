@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Unidad 3</title>
+    <script src="./js/unidad3.js"></script>
     <style>
         h1 {
             color: blue;
@@ -13,8 +14,38 @@
 </head>
 
 <body>
+    <h1>Unidad 2.2</h1>
+    <h2>Subtitulo</h2>
+    <h3 class="grupo1">Subtitulo</h3>
+    <h4>Subtitulo</h4>
+    <h5>Subtitulo</h5>
+    <h6 id="subtitulo">Subtitulo</h6>
+    <p>Parrafo <br> <br><br>Parrafo</p>
 
-    <script src="./js/unidad3.js"></script>
+    <div id="contenedor">
+        <p class="grupo2">Parrafo</p>
+        <p class="grupo1">Parrafo</p>
+    </div>
+
+    <form action="?" method="post"><!--Get es por la URL y POst no se ve-->
+        <input id="nombre" type="text" name="nombre" placeholder="Nombre">
+        <input id="clave" type="password" name="clave" placeholder="Clave">
+        <label>Color favorito</label>
+        <input type="button" value="Enviar">
+    </form>
+
+    <form action="?" method="post" id="formularioTarea"><!--Get es por la URL y POst no se ve-->
+        <input id="nuevaTarea" type="text" name="nuevaTarea" placeholder="Tarea">
+
+        <span id="mensaje">Campo requerido</span>
+        <input type="submit" id="agregarTarea" value="Enviar">
+    </form>
+    <ul id="listaTareas">
+        <li>Tarea1</li>
+
+    </ul>
+    <img id="imagen" src="./img/logo.jpg">
+
 </body>
 
 </html>

@@ -106,4 +106,118 @@ while (numero < 60) {
 do {
     numero++;
     console.log("DOWHILE", numero);
-}while (numero < 60);
+} while (numero < 60);
+
+
+function restar(num1, num2) {
+    return num1 - num2;
+}
+
+let resultado = restar(10, 3);
+
+console.log(resultado);
+
+function saludar() {
+    console.log("Hola a todos !!");
+}
+
+function SaludarNombre(nombre) {
+    console.log("Hola! ", nombre);
+}
+
+saludar();
+SaludarNombre("Karol");
+
+
+function calcularAguinaldo(listaSalarios) {
+    let total = 0;
+    for (let i = 0; i < listaSalarios.length; i++) {
+        total += listaSalarios[i];
+    }
+    return total / 12;
+}
+
+
+let listaEmpleados = [
+    {
+        nombre: "Karol",
+        salarios: [100, 100, 100, 100, 100, 100, 100, 300, 300, 300, 300, 300]
+    },
+    {
+        nombre: "Fabian",
+        salarios: [110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110]
+    }
+];
+
+for (let i = 0; i < listaEmpleados.length; i++) {
+    let aguinaldo = calcularAguinaldo(listaEmpleados[i].salarios);
+    console.log("El empleado " + listaEmpleados[i].nombre + ", tiene un aguinaldo de: " + aguinaldo.toFixed(2));
+}
+
+// funcion flecha
+
+let calcularSuma = (num1, num2) => num1 + num2;
+
+console.log(calcularSuma(6, 7));
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    //Manipulacion que el DOM? agregar nodos, modificar nodos o eliminar nodos
+
+    // modificar un nodo?
+    let subtituloByID = document.getElementById("subtitulo");
+    console.log(subtituloByID);
+    let subtitulo = document.querySelector("#subtitulo");//selecciona el primero que se encuentre id-># class -> . o por etiqueta donde solo pongo la etiqueta
+    console.log(subtitulo);
+    let grupo = document.querySelector(".grupo1");
+    console.log(grupo);
+    let grupo1All = document.querySelectorAll(".grupo1");
+    console.log(grupo1All);
+
+    subtitulo.innerText = "Nuevo subtitulo";
+    subtitulo.style.color = "purple";
+
+    for (let i = 0; i < grupo1All.length; i++) {
+        grupo1All[i].style.color = "red";
+    }
+
+    let listaTareas = document.getElementById("listaTareas");
+    listaTareas.innerHTML = "<li>Nuevo Li</li>";
+
+    // crear nuevo nodos 
+
+    let nuevaTarea = document.createElement("li"); // la etiqueta que quiero crear
+    nuevaTarea.innerText = "Nuevo elemento desde el create";
+    listaTareas.appendChild(nuevaTarea);
+
+
+    let nuevaImagen = document.createElement("img"); // la etiqueta que quiero crear
+    nuevaImagen.src = "./img/logo.jpg";
+    document.body.appendChild(nuevaImagen);
+    // eliminar nodos
+    nuevaImagen.remove();
+    let mensaje = document.getElementById("mensaje");
+    mensaje.style.display = "none";
+
+    let formularioTarea = document.querySelector("#formularioTarea");
+
+    formularioTarea.addEventListener("submit", function (event) {
+        event.preventDefault();
+        // validar porjavascript
+        let inputTarea = document.getElementById("nuevaTarea");
+
+
+        if (inputTarea.value == "") {
+            inputTarea.style.borderColor = "red";
+            mensaje.style.display = "block";
+        } else {
+            mensaje.style.display = "none";
+            inputTarea.style.borderColor = "black";
+            let nuevaTarea = document.createElement("li");
+            nuevaTarea.innerText = inputTarea.value;
+            listaTareas.appendChild(nuevaTarea);
+            inputTarea.value = "";
+        }
+    });
+});
