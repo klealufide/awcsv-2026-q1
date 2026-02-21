@@ -218,6 +218,8 @@ document.addEventListener("DOMContentLoaded", function () {
             nuevaTarea.innerText = inputTarea.value;
             listaTareas.appendChild(nuevaTarea);
             inputTarea.value = "";
+            formularioTarea.submit();
+
         }
     });
 });
