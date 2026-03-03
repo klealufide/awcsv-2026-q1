@@ -1,4 +1,18 @@
-<?php
+<?php $espacio = "<br>";
+$numero = -5;
+if ($numero > 0) {
+    echo "El número es positivo.";
+} elseif ($numero < 0) {
+    echo "El número es negativo.";
+} else {
+    echo "El número es cero.";
+}
+if ($numero % 2 == 0) {
+    echo "El número $numero es par." . $espacio;
+} else {
+    echo "El número $numero es impar." . $espacio;
+}
+
 
 $nombreEstudiante = "Maria";
 $edad  = 22;

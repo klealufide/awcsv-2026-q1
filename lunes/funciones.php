@@ -1,4 +1,5 @@
 <?php
+session_start();
 // no son typeadas
 $nombreEstudiante = "Maria";
 $edad = 22;
@@ -130,3 +131,189 @@ do {
 } while ($numero < 50);
 
 
+$listaFrutas = ["melon", "manzana", "pera"];
+
+for ($i = 0; $i < count($listaFrutas); $i++) {
+    echo $listaFrutas[$i] . $saltoLinea;
+}
+
+foreach ($listaFrutas as $i => $fruta) {
+    echo  "en la posicion " . $i . " se encuentra la fruta: " . $fruta . "<br>";
+}
+
+
+$listaEstudiantesNombres = ["Maria", "Luis", "Juan"];
+
+//echo $listaFrutas[2];
+
+$persona = [
+    "nombre" => "Paola",
+    "apellido" => "Mora",
+    "edad" => 21,
+    "esEstudiante" => true,
+];
+
+
+print_r($listaFrutas);
+print_r($persona);
+
+echo $listaFrutas[1] . $saltoLinea;
+
+echo $persona["edad"] . $saltoLinea;
+
+foreach ($persona as $clave => $valor) {
+    //echo $clave.": ".$valor.$saltoLinea;
+    echo $valor . $saltoLinea;
+}
+
+
+$persona2 = [
+    "nombre" => "Marco",
+    "apellido" => "Perez",
+    "edad" => 40,
+    "esEstudiante" => false,
+];
+
+
+
+$persona3 = [
+    "nombre" => "Luisa",
+    "apellido" => "Mendez",
+    "edad" => 15,
+    "esEstudiante" => true,
+];
+
+$listaEstudiantes = [
+    $persona,
+    $persona2,
+    $persona3
+];
+echo $saltoLinea;
+print_r($listaEstudiantes);
+
+foreach ($listaEstudiantes as $clave => $arreglo) {
+    foreach ($arreglo as $clave2 => $valor) {
+        //echo $clave.": ".$valor.$saltoLinea;
+        echo $valor . $saltoLinea;
+    }
+}
+
+
+echo "<table border='1'><tr><td>Nombre</td><td>Apellido</td><td>Edad</td><td>Es estudiante?</td></tr>";
+
+foreach ($listaEstudiantes as $estudiante) {
+    $esEstudiante = ($estudiante['esEstudiante']) ? "Si" : "No";
+
+    echo "<tr><td>" . $estudiante['nombre'] . "</td><td>" . $estudiante['apellido'] . "</td><td>" . $estudiante['edad'] . "</td><td>" .  $esEstudiante . "</td></tr>";
+}
+echo "</table>";
+
+
+
+
+array_push($listaFrutas, "fresa");
+
+print_r($listaFrutas);
+
+$index = array_search("fresa", $listaFrutas);
+
+echo $index;
+
+$arreglo_unido = array_merge($listaFrutas, $listaEstudiantes);
+
+print_r($arreglo_unido);
+
+echo $saltoLinea;
+
+echo $arreglo_unido[3];
+
+echo $saltoLinea;
+echo $arreglo_unido[6]["nombre"];
+
+//simple
+function sumar($a, $b)
+{
+    return $a + $b;
+}
+echo $saltoLinea;
+
+
+function dividir($a, $b)
+{
+    return $a / $b;
+}
+echo $saltoLinea;
+function calculadora($a, $b, $operador)
+{
+    $restar = function ($a, $b) {
+        return $a - $b;
+    };
+    //flecha
+    $multiplicar = fn($a, $b) => $a * $b;
+    switch ($operador) {
+        case '+':
+            return sumar($a, $b);
+            break;
+        case '-':
+            return $restar($a, $b);
+            break;
+
+        case '*':
+            return $multiplicar($a, $b);
+            break;
+
+        case '/':
+            return dividir($a, $b);
+            break;
+    }
+}
+
+echo $saltoLinea;
+echo calculadora(10, 5, "*");
+
+echo $saltoLinea;
+
+$archivo = fopen("archivo.txt", "w"); //w creo archivo nuevo y escribo //a creo archivo o abro archivo existente y agrego datos
+$text = "Nuevo texto\n";
+fwrite($archivo, $text);
+$text = "Nuevo texto2\n";
+fwrite($archivo, $text);
+fclose($archivo);
+echo $saltoLinea;
+$archivo = fopen("archivo.txt", "r");
+while (!feof($archivo)) {
+    echo fgets($archivo) . $saltoLinea;
+}
+fclose($archivo);
+echo $saltoLinea;
+
+$_SESSION["usuario"] = "kleal";
+$_SESSION["rol"] = "admin";
+$_SESSION["nombre"] = "Karol";
+
+print_r($_SESSION);
+
+echo $_SESSION["nombre"];
+
+echo "<a href='unidad4.php'> Ir a Unidad4</a>";
+echo $saltoLinea;
+// Seguridad
+
+
+$usuario = "kleal";
+$clave = "123456";
+
+$claveBD = '$2y$10$.7r.Y8mHCYApSQxavOWIQ.SZYw8B1F8sKO4XvjDtkqGdTDcflljRq';
+
+// Obtener una clave encriptada
+// Registro
+//$claveBD = password_hash($clave, PASSWORD_BCRYPT);
+echo $saltoLinea;
+echo $claveBD;
+echo $saltoLinea;
+// Login
+if (password_verify($clave, $claveBD)) {
+    echo "Clave coincide";
+} else {
+    echo "Clave no coincide";
+}
