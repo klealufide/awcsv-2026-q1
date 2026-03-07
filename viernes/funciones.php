@@ -1,4 +1,7 @@
-<?php $espacio = "<br>";
+<?php
+session_start();
+
+$espacio = "<br>";
 $numero = -5;
 if ($numero > 0) {
     echo "El número es positivo.";
@@ -160,4 +163,138 @@ for ($i = 0; $i < count($listaFrutas); $i++) {
 
 foreach ($listaFrutas as $i => $fruta) {
     echo  "en la posicion " . $i . " se encuentra la fruta: " . $fruta . "<br>";
+}
+echo "<hr>";
+print_r($listaFrutas);
+echo $listaFrutas[1]    . $espacio;
+
+$persona = [
+    "nombre" => "Maria",
+    "apellido" => "Mora",
+    "edad" => 22,
+    "esEstudiante" => true
+];
+
+print_r($persona);
+
+echo $persona["nombre"] . $espacio;
+
+foreach ($persona as $index => $valor) {
+    echo  "en la posicion " . $index . " se encuentra el valor  " . $valor . "<br>";
+}
+
+$persona2 = [
+    "nombre" => "Juan",
+    "apellido" => "Mora",
+    "edad" => 50,
+    "esEstudiante" => false
+];
+
+$persona3 = [
+    "nombre" => "Pablo",
+    "apellido" => "Campos",
+    "edad" => 27,
+    "esEstudiante" => true
+];
+
+$listaPersonas = [
+    $persona,
+    $persona2,
+    $persona3
+];
+
+
+print_r($listaPersonas);
+
+echo "<table border='1'><tr><th>Nombre</th><th>Apellido</th><th>Edad</th><th>Es estudiante?</th></tr>";
+
+foreach ($listaPersonas as $persona) {
+    $esEstudiante = ($persona["esEstudiante"]) ? "Es estudiante" : "No es estudiante";
+    if ($persona["edad"] > 25) {
+        echo "<tr><td>" . $persona["nombre"] . "</td><td>" . $persona["apellido"] . "</td><td>" . $persona["edad"] . "</td><td>" .    $esEstudiante . "</td></tr>";
+    }
+}
+
+echo "</table>";
+echo "<hr>";
+echo $listaPersonas[2]["nombre"];
+
+$arreglo_unido = array_merge($listaFrutas, $listaPersonas);
+
+print_r($arreglo_unido);
+
+
+// funciones
+
+
+//1. simple 
+function sumar($a, $b)
+{
+    return $a + $b;
+}
+
+//2, anonima
+
+$restar = function ($a, $b) {
+    return $a - $b;
+};
+
+// flecha
+
+$multiplicar = fn($a, $b) => $a * $b;
+
+echo sumar(10, 5) . $espacio;
+echo $restar(10, 5) . $espacio;
+echo $multiplicar(10, 5) . $espacio;
+
+$archivo = fopen("archivo.txt", "w");
+$texto = "Texto A\n";
+fwrite($archivo, $texto);
+$texto = "Texto B\n";
+fwrite($archivo, $texto);
+fclose($archivo);
+
+$archivo = fopen("archivo.txt", "r");
+while (!feof($archivo)) {
+    echo fgets($archivo) . $espacio;
+}
+fclose($archivo);
+
+
+// ARREGLO ASOCIATIVO;
+$_SESSION["usuario"] = "kleal";
+$_SESSION["rol"] = "admin";
+$_SESSION["nombre"] = "Karol Leal";
+print_r($_SESSION);
+
+echo "<a href='unidad4.php'> Ir a Unidad4</a>";
+echo $espacio;
+
+
+///////////////////////// REGISTRO //////////////// 1. USUARIO -> kleal 2.CLAVE -> 12345
+
+$usuario = "kleal";
+$clave = "12345";
+
+$clave_basededatos = password_hash($clave, PASSWORD_BCRYPT);
+
+//echo $clave_basededatos;
+
+$hash_basededatos = '$2y$10$Rn/5WCwf0PQ3wzy.xfmOtue0d/O0zroh3.kPwk5IRmevfr3s6/yDi'; // Guardo en base de datos
+
+
+///////////////////////// login //////////////// 1. USUARIO -> kleal 2.CLAVE -> 12345
+$usuario = "kleal"; // formulario
+$clave = "12345"; // formulario
+$hash_basededatos = '$2y$10$Rn/5WCwf0PQ3wzy.xfmOtue0d/O0zroh3.kPwk5IRmevfr3s6/yDi';  // base de datos
+// Informacion del usuariom: usuario, clave, rol, nombre
+
+if (password_verify($clave, $hash_basededatos)) {
+    echo "Clave coincide!";
+    $_SESSION["usuario"] = "kleal";
+    $_SESSION["rol"] = "admin";
+    $_SESSION["nombre"] = "Karol Leal";
+    print_r($_SESSION);
+} else {
+    echo "Clave NO coincide!";
 }

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -11,8 +12,17 @@
 <body>
     <h1>Unidad 4</h1>
     <?php
-    echo "<b>Hola Clase!</b>";
-    ?>
+    if (!empty($_SESSION)) {
+        if ($_SESSION["rol"] == "admin") {
+            echo "<b>Hola Administrador!, " . $_SESSION["nombre"] . "</b>";
+        } else {
+            echo "<b>Hola" . $_SESSION["nombre"] . "</b>";
+        }
+    } else {
+        echo "<b>Hola ud no esta logueado,</b>";
+    } ?>
+    <a href="funciones.php"> Ir a funciones</a>
+    <a href="logout.php"> Salir</a>
 </body>
 
 </html>
