@@ -32,7 +32,7 @@ class UserController
         $user = $this->model->login($username);
 
         if ($user && password_verify($password, $user['password'])) {
-
+            $_SESSION['id'] = $user['id'];
             $_SESSION['user'] = $user['username'];
             $_SESSION['rol'] = $user['rol'];
 
