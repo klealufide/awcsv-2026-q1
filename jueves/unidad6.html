@@ -1,0 +1,57 @@
+<!DOCTYPE html> <!--  Ls etiqueta inicial que indica que tipo de documento es,,, que este caso es HTML5-->
+<html>
+
+<head>
+    <title>Unidad 6</title>
+    <!-- <script src="./js/jquery-4.0.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="./js/unidad6.js"></script>
+    <style>
+        .error {
+            border-color: red;
+        }
+
+        .okay {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="titulo" class="okay">Formulario</h1>
+        <input type="button" id="cambiarTexto" value="Cambiar Texto">
+    </header>
+    <main>
+        <form id="formLogin">
+            <label>Usuario:</label>
+            <input type="text" id="username">
+            <label>Clave:</label>
+            <input type="password" id="password">
+            <label>Rol:</label>
+            <input type="text" id="rol" name="rol">
+            <input type="submit" value="Enviar">
+        </form>
+        <h3 class="subtitulo">Contacto</h3>
+        <ul id="listaContacto">
+            <li>Tel:888888</li>
+            <li>Pais Costa Rica</li>
+        </ul>
+        <h3 class="subtitulo">Profesores</h3>
+        <ul id="listaProfesores">
+            <li>Maria Mora</li>
+            <li>Juan Perez</li>
+        </ul>
+        <img src="./img/logo.jpg">
+        <a href="https://google.com"> Google</a>
+    </main>
+    <footer>
+
+    </footer>
+
+
+
+</body>
+
+</html>
