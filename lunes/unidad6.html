@@ -15,11 +15,21 @@
         }
 
         .error {
-            border-color: red!important;
+            border-color: red !important;
         }
 
         .okay {
             border-color: black;
+        }
+
+        #cuadrado {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .rosado {
+            background-color: pink !important;
         }
     </style>
 </head>
@@ -50,8 +60,28 @@
             <li>Maria Mora</li>
             <li>Juan Perez</li>
         </ul>
-        <img src="./img/images.jpg">
+        <img src="./img/images.jpg"><button id="cambiarImagen">Cambiar Imagen</button>
         <a href="https://google.com"> Google</a>
+        <div id="cuadrado">
+
+        </div>
+        <div class="botones">
+            <button type="button" id="desaparecer">Desaparecer</button>
+            <button type="button" id="aparecer">Aparecer</button>
+            <button type="button" id="agrandar">Agrandar</button>
+            <button type="button" id="disminuir">Disminuir</button>
+            <button type="button" id="cambiarColor">Cambiar Color</button>
+        </div>
+        <div>
+
+            <form id="formTareas">
+                <label>Tarea:<span id="mensaje">*campo requerido</span></label>
+                <input type="text" id="tarea">
+                <input type="submit" value="Agregar Tarea">
+            </form>
+            <ul id="listaTareas">
+            </ul>
+        </div>
     </main>
     <footer>
 
