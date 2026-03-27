@@ -8,14 +8,15 @@
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet">
-
+    <script src="public/js/jquery-4.0.0.min.js"></script>
+    <script src="public/js/auth.js"></script>
 </head>
 
 <body class="container mt-5">
 
     <h2>Login</h2>
 
-    <form action="/awcsv-2026-q1/jueves/reservaciones/index.php" method="POST">
+    <form id="formLogin">
         <input
             class="form-control mb-2"
             name="username"
@@ -29,15 +30,13 @@
             id="password"
             placeholder="Contraseña">
 
-        <input type="hidden" value="login" name="option">
-
-        <button class="btn btn-primary">
+        <button type="submit" class="btn btn-primary">
             Ingresar
         </button>
 
     </form>
 
-    <script src="/js/auth.js"></script>
+
 
 </body>
 

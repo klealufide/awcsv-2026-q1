@@ -26,22 +26,29 @@ class ReservationController
     public function index()
     {
 
-        $reservations = $this->model->getAll();
-
         require __DIR__ . '/../views/reservations/index.php';
+    }
+
+    public function getReservation()
+    {
+        $reservations = $this->model->getAll();
+        echo json_encode(["reservations" => $reservations->fetch_all(MYSQLI_ASSOC)]);
     }
 
     public function store()
     {
 
-        $name = $_POST['name'];
-        $date = $_POST['reservation_date'];
-        $people = $_POST['people'];
-        $comments = $_POST['comments'];
+        try {
+            $name = $_POST['name'];
+            $date = $_POST['reservation_date'];
+            $people = $_POST['people'];
+            $comments = $_POST['comments'];
 
-        $this->model->create($name, $date, $people, $comments);
+            $this->model->create($name, $date, $people, $comments);
 
-        header("Location: index.php?page=reservations");
-        exit;
+            echo json_encode(["response" => "00"]);
+        } catch (ErrorException $e) {
+            echo json_encode(["response" => "01"]);
+        }
     }
 }

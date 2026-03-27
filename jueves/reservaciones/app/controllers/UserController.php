@@ -36,12 +36,10 @@ class UserController
             $_SESSION['user'] = $user['username'];
             $_SESSION['rol'] = $user['rol'];
 
-            header("Location: index.php?page=reservations");
-            exit;
+            echo json_encode(['response'=>"00", 'message'=>"Login exitoso"]);
         } else {
 
-            header("Location: index.php");
-            exit;
+            echo json_encode(['response'=>"01", 'message'=>"Error de autentificacion"]);
         }
     }
 }

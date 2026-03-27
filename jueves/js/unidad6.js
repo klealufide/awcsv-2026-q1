@@ -71,7 +71,54 @@ $(function () {
         } else {
             this.submit();
         }
+    })
 
+
+    let desvanecer = $("#desvanecer");
+    let mostrar = $("#mostrar");
+    let agrandar = $("#agrandar");
+    let cambiarColor = $("#cambiarColor");
+
+    let cuadrado = $("#cuadrado");
+    cuadrado.toggleClass("rosado");
+    desvanecer.on("click", function () {
+        cuadrado.fadeOut(1000);
+    })
+
+    mostrar.on("click", function () {
+        cuadrado.fadeIn(1000);
+    })
+
+    cambiarColor.on("click", function () {
+        cuadrado.toggleClass("rosado");
+    })
+
+    agrandar.on("click", function () {
+        cuadrado.animate({
+            width: '400px',
+            height: '400px',
+            opacity: 0.5
+        }, 1000);
+    })
+
+    let formTareas = $("#formTareas");
+    let listaTareas = $("#listaTareas");
+    let mensaje = $("#mensaje");
+    mensaje.hide();
+
+    formTareas.on("submit", function (event) {
+        event.preventDefault();
+        let tarea = $("#tarea");
+
+        if (tarea.val() != "") {
+            tarea.removeClass("error");
+            listaTareas.prepend("<li>" + tarea.val() + "</li>");
+            tarea.val("");
+            mensaje.hide();
+        } else {
+            mensaje.show();
+            tarea.addClass("error");
+        }
 
     })
 })

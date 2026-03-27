@@ -6,6 +6,20 @@ require './app/controllers/ReservationController.php';
 $page = $_GET['page'] ?? 'login';
 
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+
+    if ($_GET['option'] ?? "" == "reservations") {
+
+        $res = new ReservationController();
+        $res->getReservation();
+        exit;
+    }
+
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
