@@ -47,7 +47,7 @@ $(function () {
     let form = $("#formLogin");
 
     form.on("submit", function (event) {
-        
+
         let username = $("#username");
         let password = $("#password");
         let rol = $("#rol");
@@ -78,6 +78,54 @@ $(function () {
                 rol.removeClass("errorInput");
                 rol.addClass("okayInput");
             }
+        }
+    })
+
+    let desvanecer = $("#desvanecer");
+    let aparecer = $("#aparecer");
+    let agrandar = $("#agrandar");
+    let toggle = $("#toggle");
+
+    let cuadrado = $("#cuadrado");
+
+    desvanecer.on("click", function () {
+        cuadrado.fadeOut(1000);
+    })
+    aparecer.on("click", function () {
+        cuadrado.fadeIn(1000);
+    })
+
+    agrandar.on("click", function () {
+        cuadrado.animate({
+            width: '400px',
+            height: '400px',
+            opacity: 0.5
+        }, 1000);
+    })
+
+    toggle.on("click", function () {
+        cuadrado.toggleClass("rosado");
+    })
+
+    let listaTareas = $("#listaTareas");
+    let formTareas = $("#formTareas");
+    let mensaje = $("#mensaje");
+
+    mensaje.hide();
+
+    formTareas.on("submit", function (event) {
+        event.preventDefault();
+
+        let tarea = $("#tarea");
+
+        if (tarea.val() === "") {
+            tarea.addClass("errorInput");
+            mensaje.show();
+        } else {
+            tarea.removeClass("errorInput");
+            listaTareas.prepend("<li>" + tarea.val() + '</li>');
+            tarea.val("");
+            mensaje.hide();
         }
     })
 })

@@ -22,6 +22,16 @@
         .okayInput {
             border-color: black;
         }
+
+        #cuadrado {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+
+        .rosado {
+            background-color: pink !important   ;
+        }
     </style>
 </head>
 
@@ -53,6 +63,29 @@
         </ul>
         <img src="./img/logo.jpg">
         <a href="https://google.com"> Google</a>
+
+        <div id="cuadrado"></div>
+        <div>
+            <input id="desvanecer" type="button" value="Desvanecer">
+            <input id="aparecer" type="button" value="Aparecer">
+            <input id="agrandar" type="button" value="Agrandar">
+            <input id="toggle" type="button" value="Toggle">
+        </div>
+
+
+
+
+
+        <form id="formTareas">
+            <label>Tarea:<span id="mensaje">Campo obligatorio</span></label>
+            <input type="text" id="tarea">
+            <input type="submit" value="Agregar Tarea">
+        </form>
+        <section>
+            <ul id="listaTareas">
+
+            </ul>
+        </section>
     </main>
     <footer>
 

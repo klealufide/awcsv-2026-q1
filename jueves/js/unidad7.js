@@ -1,13 +1,13 @@
 $(function () {
 
     let formPokemon = $("#formPokemon");
-    const urlPokemon = "https://pokeapi.co/api/v2/pokemon/";
+    const urlPokemon = "https://pokeapi.co/";
     let infoPokemon = $("#infoPokemon");
     console.log("Tess")
     formPokemon.on("submit", function (event) {
         event.preventDefault();
         let pokemon = $("#pokemon");
-
+        let endpoint = "api/v2/pokemon/";
         if (pokemon.val() != "") {
 
 
@@ -22,7 +22,7 @@ $(function () {
 
                 */
 
-            $.get(urlPokemon + pokemon.val(), function (data) {
+            $.get(urlPokemon + endpoint + pokemon.val(), function (data) {
                 infoPokemon.html("<h3>" + data.name + "</h3><img src='" + data.sprites.front_default + "'>");
                 pokemon.val("");
             });
