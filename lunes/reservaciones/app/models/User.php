@@ -20,4 +20,5 @@ class User
 
         return $stmt->fetch_assoc();
     }
+    
 }

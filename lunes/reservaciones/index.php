@@ -1,14 +1,27 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 require './app/controllers/UserController.php';
 require './app/controllers/ReservationController.php';
 
+
 $page = $_GET['page'] ?? 'login';
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+
+    if ($_GET['option'] ?? "" == "reservations") {
+
+        $res = new ReservationController();
+        $res->getReservation();
+        exit;
+    }
+
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
 
     if ($_POST['option'] == "login") {
 
